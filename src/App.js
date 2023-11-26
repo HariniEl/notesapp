@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './Components/Home';
+import Sidebar from './Components/Sidebar';
+import NotesContext from './Context/NotesContext';
+import DataContext from './Context/DataContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='flex gap-5 '>
+			<Sidebar />
+			<NotesContext>
+				<DataContext>
+					<Home />
+				</DataContext>
+			</NotesContext>
+		</div>
+	);
 }
 
 export default App;
